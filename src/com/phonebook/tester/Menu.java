@@ -1,5 +1,6 @@
 package com.phonebook.tester;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import com.phonebook.exceptions.InvalidNameException;
@@ -26,8 +27,16 @@ public static void main(String[] args) throws InvalidNameException, InvalidPhone
             System.out.println(" ");
             System.out.print("Enter your choice: ");
             
-            int choice = sc.nextInt();
-            sc.nextLine();
+            int choice = 0;
+            try {
+            	choice = sc.nextInt();
+                sc.nextLine();
+            }
+            catch(InputMismatchException e) {
+            	System.out.println("Invalid input. Please enter a valid choice (a number)");
+            	sc.nextLine();
+            	continue;
+            }      
             
             switch (choice) {
                 case 1:
@@ -39,10 +48,19 @@ public static void main(String[] args) throws InvalidNameException, InvalidPhone
                 	System.out.println("1. Search Contact By Name");
                 	System.out.println("2. Search Contact By PhoneNumber");
                 	System.out.println(" ");
-                	System.out.print("Enter your choice: ");             	
+                	System.out.print("Enter your choice: ");  
+                	
+                	int option1 = 0;
 
-                    int option1 = sc.nextInt();
-                    sc.nextLine();
+                	try {
+                    	option1 = sc.nextInt();
+                        sc.nextLine();
+                    }
+                    catch(InputMismatchException e) {
+                    	System.out.println("Invalid input. Please enter a valid choice (a number)");
+                    	sc.nextLine();
+                    	continue;
+                    }    
                     
                     switch (option1) {
                     case 1:
@@ -72,9 +90,18 @@ public static void main(String[] args) throws InvalidNameException, InvalidPhone
                 	System.out.println("2. Update Phone Number");
                 	System.out.println(" ");
                 	System.out.print("Enter your choice: ");
+                	
+                	int option2 = 0;
 
-                    int option2 = sc.nextInt();
-                    sc.nextLine();
+                	try {
+                    	option2 = sc.nextInt();
+                        sc.nextLine();
+                    }
+                    catch(InputMismatchException e) {
+                    	System.out.println("Invalid input. Please enter a valid choice (a number)");
+                    	sc.nextLine();
+                    	continue;
+                    }    
                     
                     switch (option2) {
                     case 1:
