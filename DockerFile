@@ -1,5 +1,5 @@
 FROM openjdk
 MAINTAINER  sans11
 WORKDIR /app
-COPY target/java-basics.jar app/java-basics.jar
-ENTRYPOINT ["java","-jar","java-basics.jar"`]
+COPY target/phonebook.jar app/phonebook.jar
+ENTRYPOINT ["java","-jar","phonebook.jar"`]
